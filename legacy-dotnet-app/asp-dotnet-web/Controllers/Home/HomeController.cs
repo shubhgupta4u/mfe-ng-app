@@ -13,16 +13,16 @@ namespace asp_dotnet_web.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Login()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Sign In";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Register()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Sign Up";
 
             return View();
         }

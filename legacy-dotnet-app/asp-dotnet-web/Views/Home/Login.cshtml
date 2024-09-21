@@ -1,0 +1,27 @@
+﻿@model asp_dotnet_web.Models.LoginModel
+@{
+    ViewBag.Title = "Sign In";
+}
+<div class="row justify-content-center align-items-center">
+    <div class="col-md-6 col-lg-6">
+        <div class="login-card">
+            <h2 class="text-center">@ViewBag.Title</h2>
+            @using (Html.BeginForm("SignIn", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your email", required = "required" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter your password", required = "required" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            }
+            <p class="text-center mt-3"><a href="#">Forgot Password?</a></p>
+        </div>
+    </div>
+</div>

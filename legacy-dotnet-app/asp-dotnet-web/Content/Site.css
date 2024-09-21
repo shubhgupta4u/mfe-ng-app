@@ -12,9 +12,24 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+body {
+    background-color: #ffffff;
+}
+
+.hero {
+    background-color: #6c757d;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 50px;
+    color: #007bff;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
 }

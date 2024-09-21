@@ -2,7 +2,10 @@
   "name": "@modern-mfe-nx-ng-ui/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "npx nx build modern-mfe-nx-ng-ui",
+    "serve": "npx nx serve modern-mfe-nx-ng-ui"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",
@@ -43,6 +46,7 @@
     "@types/node": "18.16.9",
     "@typescript-eslint/utils": "^7.16.0",
     "angular-eslint": "^18.3.0",
+    "cpx": "^1.5.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-playwright": "^1.6.2",

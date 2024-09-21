@@ -1,39 +1,54 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@{
+    var currentAction = ViewContext.RouteData.Values["action"].ToString();
+    var currentController = ViewContext.RouteData.Values["controller"].ToString();
+}
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link rel="stylesheet" href="~/Content/Home.css" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
-            </div>
+    <div class="layout">
+        <div class="header">
+            <header class="hero">
+                <h1>Efficient Document Management</h1>
+                <p>Store, share, and manage your documents seamlessly.</p>
+                @if (currentAction != "Index")
+                {
+                    <a class="@(currentAction == "Index" && currentController == "Home" ? "btn btn-lg btn-light" : "btn btn-lg btn-outline-light")" href="@Url.Action("Index", "Home")">Home</a>
+                }
+                @if (currentAction != "Login")
+                {
+                    <a class="@(currentAction == "Login" && currentController == "Home" ? "btn btn-lg btn-light" : "btn btn-lg btn-outline-light")" href="@Url.Action("Login", "Home")">Login</a>
+                }
+                @if (currentAction != "Register")
+                {
+                    <a class="@(currentAction == "Register" && currentController == "Home" ? "btn btn-lg btn-light" : "btn btn-lg btn-outline-light")" href="@Url.Action("Register", "Home")">Register</a>
+                }
+                </header>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        <div class="content">
+            <main>
+                <section class="py-5">
+                    <div class="container">
+                        @RenderBody()
+                    </div>
+                </section>
+            </main>
+        </div>
+        <div class="footer">
+            <footer class="text-center">
+                <p>&copy; 2024 Document Management System. All Rights Reserved.</p>
+            </footer>
+        </div>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

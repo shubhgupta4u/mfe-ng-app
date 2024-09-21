@@ -1,0 +1,37 @@
+﻿@model asp_dotnet_web.Models.RegistrationModel
+@{
+    ViewBag.Title = "Sign Up";
+}
+<div class="row justify-content-center align-items-center">
+    <div class="col-md-6 col-lg-6">
+        <div class="register-card">
+            <h2 class="text-center">Register</h2>
+            @using (Html.BeginForm("SignUp", "Register", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Enter your username", required = "required" })
+                    @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your email", required = "required" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Create a password", required = "required" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm your password", required = "required" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            }
+            <p class="text-center mt-3"><a href="#">Already have an account? Login</a></p>
+        </div>
+    </div>
+</div>
