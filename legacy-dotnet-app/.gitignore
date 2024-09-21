@@ -1,0 +1,52 @@
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.log
+*.tlog
+*.dSYM/
+*.app/
+*.dbmdl
+*.dbproj.schemaview
+
+# NuGet Packages
+*.nupkg
+**/packages/*
+!**/packages/build/
+!**/packages/build/Packages.props
+
+# User-specific files
+*.userprefs
+*.sln.ide
+
+# Visual Studio Code files
+.vscode/
+*.code-workspace
+
+# Publish Output
+Publish/
+*.publish.xml
+
+# Others
+*.db
+*.json
+*.xml
+*.swp
+*.tmp
+
+# Rider
+.idea/
+
+# Miscellaneous
+Thumbs.db
+*.DS_Store

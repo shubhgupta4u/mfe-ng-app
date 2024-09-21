@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asp-dotnet-web", "asp-dotnet-web\asp-dotnet-web.csproj", "{0BEC1444-6CCB-4936-8FC5-B84D460179FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asp-dotnet-web.Tests", "asp-dotnet-web.Tests\asp-dotnet-web.Tests.csproj", "{D82E8E36-7204-4F8E-A010-C94568B59CC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BEC1444-6CCB-4936-8FC5-B84D460179FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BEC1444-6CCB-4936-8FC5-B84D460179FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BEC1444-6CCB-4936-8FC5-B84D460179FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BEC1444-6CCB-4936-8FC5-B84D460179FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82E8E36-7204-4F8E-A010-C94568B59CC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82E8E36-7204-4F8E-A010-C94568B59CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82E8E36-7204-4F8E-A010-C94568B59CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82E8E36-7204-4F8E-A010-C94568B59CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {025E36CF-757D-460A-9452-CCFDAF57BC6E}
+	EndGlobalSection
+EndGlobal
