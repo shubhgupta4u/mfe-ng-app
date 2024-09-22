@@ -9,6 +9,17 @@
             @using (Html.BeginForm("SignIn", "Login", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
+                <div class="user-type-toggle">
+                    <label>
+                        @Html.RadioButtonFor(m => m.UserType, "Admin", new { selected = "selected" }) 
+                        Admin
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.UserType, "User") 
+                        User
+                    </label>
+                    @Html.ValidationMessageFor(m => m.UserType)
+                </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your email", required = "required" })

@@ -1,13 +1,50 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html lang="en" data-critters-container>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link rel="stylesheet" href="http://localhost:4201/styles.css">
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <h5 class="sidebar-heading">Document Management</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("Empty", "AdminDashboard", new { email = "shubhgupta4u@gmail.com" })">Angular Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "AdminDashboard", new { email = "shubhgupta4u@gmail.com" })">Legacy Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Home")">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <h1 class="mt-4">@ViewBag.Title</h1>
+                <hr />
+                <div>
+                    @RenderBody()
+                    <app-root></app-root>
+                </div>
+            </main>
+        </div>
     </div>
+
+    <script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script type="module" src="http://localhost:4201/polyfills.js"></script>
+    <script type="module" src="http://localhost:4201/main.js"></script>
 </body>
 </html>

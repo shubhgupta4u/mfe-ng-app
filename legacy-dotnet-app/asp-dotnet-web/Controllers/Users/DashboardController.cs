@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace asp_dotnet_web.Controllers.Users
 {
+    [Route("Dashboard")]
     public class DashboardController : Controller
     {
         // GET: Dashboard
@@ -13,6 +14,11 @@ namespace asp_dotnet_web.Controllers.Users
         {
             ViewBag.Email = email;
             return View("~/Views/Users/Dashboard/Index.cshtml");
+        }
+
+        public ActionResult Empty(string email)
+        {
+            return View("~/Views/Users/Dashboard/Empty.cshtml");
         }
     }
 }

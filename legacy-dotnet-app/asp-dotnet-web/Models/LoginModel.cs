@@ -10,5 +10,8 @@ namespace asp_dotnet_web.Models
 
         [Required(ErrorMessage = "Password is required.")]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "Please select a user type.")]
+        public string UserType { get; set; } = "user";
     }
 }

@@ -26,7 +26,15 @@
 body {
     background-color: #f7f7f7;
 }
+.user-type-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
 
+    .user-type-toggle label {
+        cursor: pointer;
+    }
 .register-card, .login-card {
     background-color: white;
     padding: 2rem;

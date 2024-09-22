@@ -3,8 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:admin": "ng serve --project admin-app",
+    "start:user": "ng serve --project user-app",
+    "start": "npm-run-all --parallel start:admin start:user",
+    "build:admin": "ng build --project admin-app",
+    "build:user": "ng build --project user-app",
+    "build:auth-lib": "ng build --project auth-lib",
+    "build:util-lib": "ng build --project util-lib",
+    "build:ui-element-lib": "ng build --project ui-element-lib",
+    "build": "npm-run-all --parallel build:admin build:user",
+    "build:libs": "npm-run-all --parallel build:auth-lib build:util-lib build:ui-element-lib",
+    "build:all": "npm-run-all --parallel build:libs build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -35,6 +44,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^18.2.0",
+    "npm-run-all": "^4.1.5",
     "typescript": "~5.5.2"
   }
 }

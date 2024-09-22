@@ -9,39 +9,28 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/Site.css" />
-    <link rel="stylesheet" href="~/wwwroot/your-app-name/styles.css">
-    <script src="~/wwwroot/runtime.js" defer></script>
-    <script src="~/wwwroot/polyfills.js" defer  type="module"></script>
-    <script src="~/wwwroot/main.js" defer  type="module"></script>
+    <link rel="stylesheet" href="http://localhost:4202/styles.css">
 </head>
 <body>
     <div class="container-fluid">
-    <div class="row">
-     Sidebar 
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-            <h5 class="sidebar-heading">Document Management</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="@Url.Action("Index", "Home")">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Upload", "Documents")">Upload Document</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("ViewDocuments", "Documents")">View Documents</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Search", "Documents")">Search Documents</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Settings", "Home")">Settings</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-     Main Content 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <h5 class="sidebar-heading">Document Management</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("Empty", "Dashboard", new { email = "shubhgupta4u@gmail.com" })">Angular Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Dashboard", new { email = "shubhgupta4u@gmail.com" })">Legacy Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Home")">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <h1 class="mt-4">@ViewBag.Title</h1>
                 <hr />
                 <div>
@@ -55,5 +44,7 @@
     <script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script type="module" src="http://localhost:4202/polyfills.js"></script>
+    <script type="module" src="http://localhost:4202/main.js"></script>
 </body>
 </html>
